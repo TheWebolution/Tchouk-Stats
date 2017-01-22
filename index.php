@@ -1,11 +1,12 @@
 <?php
 require "Models/classes.php";
 require "Views/views.php";
-$page = isset($_GET["p"]) ? $_GET["p"] : "home";
+$Page = isset($_GET["p"]) ? $_GET["p"] : "home";
 ?>
 
 <html>
 <head>
+    <title><?php echo $Page; ?></title>
 <?php
 RenderView("scripts");
 RenderView("styles");
@@ -14,10 +15,7 @@ RenderView("styles");
 </html>
 
 <body>
-    <?php new View("shared/topbar"); ?>
-    <?php new View("shared/sidebar"); ?>
-
-    <main class="<?php echo $page; ?> col-md-10 col-md-offset-2">
-        <?php new View($page); ?>
+    <main class="<?php echo $Page; ?> col-md-10 col-md-offset-2">
+        <?php RenderView($Page); ?>
     </main>
 </body>

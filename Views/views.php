@@ -1,5 +1,5 @@
 <?php
 function RenderView($view) {
-    include "Views/" . $view . ".php";
+    require "Views/" . $view . ".php";
 }
 ?>
