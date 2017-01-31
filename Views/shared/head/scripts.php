@@ -8,6 +8,7 @@ $Scripts = [
 
 function RenderScripts($Scripts) {
     global $Page;
+    global $Root;
     $allScripts = $Scripts['shared'];
 
     if (isset($Scripts[$Page])) {
@@ -15,7 +16,7 @@ function RenderScripts($Scripts) {
     }
 
     foreach ($allScripts as $script) {
-        echo '<script type="text/javascript" src="Contents/Scripts/' . $script . '.js"></script>';
+        echo '<script type="text/javascript" src="' . $Root . 'Contents/Scripts/' . $script . '.js"></script>';
     }
 }
 

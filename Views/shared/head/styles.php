@@ -11,6 +11,7 @@ $Styles = [
 
 function RenderStyles($Styles) {
     global $Page;
+    global $Root;
     $allStyles = $Styles['shared'];
 
     if (isset($Styles[$Page])) {
@@ -18,7 +19,7 @@ function RenderStyles($Styles) {
     }
 
     foreach ($allStyles as $stylesheet) {
-        echo '<link rel="stylesheet" href="Contents/Styles/' . $stylesheet . '.css">';
+        echo '<link rel="stylesheet" href="' . $Root . 'Contents/Styles/' . $stylesheet . '.css">';
     }
 }
 

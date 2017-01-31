@@ -1,16 +1,14 @@
 <?php
 require "Models/classes.php";
 require "Views/views.php";
-$Page = isset($_GET["p"]) ? $_GET["p"] : "home";
+require "init.php";
 ?>
 
 <html>
 
 <?php RenderView("shared/head"); ?>
 
-<body>
-    <main class="<?php echo $Page; ?> col-md-10 col-md-offset-2">
-        <?php RenderView($Page); ?>
-    </main>
+<body class="<?php echo $Page; ?>">
+    <?php RenderView($Page); ?>
 </body>
 </html>
